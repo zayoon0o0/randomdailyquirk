@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "randomdailyquirk",
+  "version": "1.0.0",
+  "name": "RandomDailyQuirk",
+  "authors": [
+    "Zayoon0o0"
+  ],
+  "contact": {
+    "homepage": "https://example.com",
+    "sources": ""
+  },
+  "license": "GNU GPLv3",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.myapps.randomdailyquirk.RandomdailyquirkMod"
+    ],
+    "client": [
+      "com.myapps.randomdailyquirk.RandomdailyquirkModClient"
+    ]
+  },
+  "mixins": [
+    "randomdailyquirk.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
