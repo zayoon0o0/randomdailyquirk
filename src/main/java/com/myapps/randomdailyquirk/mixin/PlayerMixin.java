@@ -11,17 +11,17 @@ import com.myapps.randomdailyquirk.event.PlayerEvents;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin {
-	@Inject(method = "tick()V", at = @At("TAIL"))
+	@Inject(method = "tick", at = @At("HEAD"))
 	public void tick(CallbackInfo ci) {
 		PlayerEvents.END_PLAYER_TICK.invoker().onEndTick((Player) (Object) this);
 	}
 
-	@Inject(method = "giveExperiencePoints(I)V", at = @At("HEAD"))
+	@Inject(method = "giveExperiencePoints", at = @At("HEAD"))
 	public void giveExperiencePoints(int amount, CallbackInfo ci) {
 		PlayerEvents.XP_CHANGE.invoker().onXpChange((Player) (Object) this, amount);
 	}
 
-	@Inject(method = "giveExperienceLevels(I)V", at = @At("HEAD"))
+	@Inject(method = "giveExperienceLevels", at = @At("HEAD"))
 	public void giveExperienceLevels(int amount, CallbackInfo ci) {
 		PlayerEvents.LEVEL_CHANGE.invoker().onLevelChange((Player) (Object) this, amount);
 	}

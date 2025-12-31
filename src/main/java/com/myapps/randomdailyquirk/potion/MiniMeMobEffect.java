@@ -11,6 +11,6 @@ import com.myapps.randomdailyquirk.RandomdailyquirkMod;
 public class MiniMeMobEffect extends InstantenousMobEffect {
 	public MiniMeMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -1);
-		this.addAttributeModifier(Attributes.SCALE, Identifier.fromNamespaceAndPath(RandomdailyquirkMod.MODID, "effect.mini_me_0"), -0.5, AttributeModifier.Operation.ADD_VALUE);
+		this.addAttributeModifier(Attributes.SCALE, Identifier.fromNamespaceAndPath(RandomdailyquirkMod.MODID, "effect.mini_me_0"), -0.7, AttributeModifier.Operation.ADD_VALUE);
 	}
 }

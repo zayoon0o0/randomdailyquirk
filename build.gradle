@@ -1,5 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.11-SNAPSHOT'
+    id 'fabric-loom' version '1.15.0-alpha.6'
+    id "com.modrinth.minotaur" version "2.+"
+
 }
 
 import groovy.json.JsonSlurper
@@ -29,8 +31,8 @@ tasks.jar {
 
 loom {
     mixin {
-        add sourceSets.main, "mymod.mixins.json"
-        defaultRefmapName = "mymod.refmap.json"
+        add sourceSets.main, "randomdailyquirk.mixins.json"
+        defaultRefmapName = "randomdailyquirk.refmap.json"
     }
 
     if (file("src/main/resources/META-INF/mymod.accesswidener").exists()) {
