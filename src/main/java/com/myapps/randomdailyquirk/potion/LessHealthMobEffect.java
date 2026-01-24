@@ -7,9 +7,9 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.resources.Identifier;
 import com.myapps.randomdailyquirk.RandomdailyquirkMod;
 
-public class MiniMeMobEffect extends MobEffect {
-	public MiniMeMobEffect() {
-		super(MobEffectCategory.NEUTRAL, -1);
-		this.addAttributeModifier(Attributes.SCALE, Identifier.fromNamespaceAndPath(RandomdailyquirkMod.MODID, "effect.mini_me_0"), -0.43, AttributeModifier.Operation.ADD_VALUE);
-	}
+public class LessHealthMobEffect extends MobEffect {
+    public LessHealthMobEffect() {
+        super(MobEffectCategory.NEUTRAL, -1);
+        this.addAttributeModifier(Attributes.MAX_HEALTH, Identifier.fromNamespaceAndPath(RandomdailyquirkMod.MODID, "effect.lesshealth_0"), -2, AttributeModifier.Operation.ADD_VALUE);
+    }
 }

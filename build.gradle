@@ -1,13 +1,20 @@
 plugins {
     id 'fabric-loom' version '1.15.0-alpha.6'
-    id "com.modrinth.minotaur" version "2.+"
-
 }
 
 import groovy.json.JsonSlurper
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 
+def mcModsFolder = file("/home/zain/.local/share/PrismLauncher/instances/1.21.11/minecraft/mods")
 def fabricJsonFile = file("src/main/resources/fabric.mod.json")
 def fabricJson = new JsonSlurper().parse(fabricJsonFile)
+
+task copyToMods(type: Copy) {
+    from("$buildDir/libs/randomdailyquirk-1.0.0-mc1.21.11.jar")
+    into(mcModsFolder)
+}
+tasks.build.finalizedBy(copyToMods)
 
 def modId = fabricJson.id ?: "unknownmod"
 def modVersion = fabricJson.version ?: "0.0.1"
